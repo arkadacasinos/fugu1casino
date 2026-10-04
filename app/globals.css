@@ -1,0 +1,331 @@
+/* ============================================================
+   Fugu Casino — лендинг. Чистый CSS, без сторонних библиотек.
+   Префикс классов: fq7- (уникальный, нестандартный).
+   ============================================================ */
+
+:root {
+  --fq7-felt: #0e3b2e;
+  --fq7-felt-deep: #09271e;
+  --fq7-gold: #c9a227;
+  --fq7-gold-soft: #e3c15a;
+  --fq7-cream: #f5f0e6;
+  --fq7-cream-2: #fbf7ef;
+  --fq7-ink: #17130d;
+  --fq7-muted: #5c5548;
+  --fq7-font-display: Georgia, 'Times New Roman', serif;
+  --fq7-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+.fq7-root {
+  background: var(--fq7-cream);
+}
+
+body {
+  font-family: var(--fq7-font-body);
+  color: var(--fq7-ink);
+  line-height: 1.6;
+  background: var(--fq7-cream);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- Шапка ---------- */
+.fq7-header {
+  background: var(--fq7-felt-deep);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.35);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.fq7-nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.fq7-logo {
+  font-family: var(--fq7-font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--fq7-gold);
+  white-space: nowrap;
+}
+
+.fq7-navlinks {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.fq7-navlink {
+  font-size: 0.9rem;
+  color: var(--fq7-cream);
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.fq7-navlink:hover {
+  background: rgba(201, 162, 39, 0.18);
+  color: var(--fq7-gold-soft);
+}
+
+/* ---------- Основная колонка (блоки можно менять местами) ---------- */
+.fq7-main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Герой ---------- */
+.fq7-hero {
+  background: radial-gradient(
+      120% 90% at 50% 0%,
+      rgba(201, 162, 39, 0.16),
+      transparent 55%
+    ),
+    linear-gradient(180deg, var(--fq7-felt) 0%, var(--fq7-felt-deep) 100%);
+  color: var(--fq7-cream);
+  padding: 2.5rem 1rem 0;
+}
+
+.fq7-heroinner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.fq7-h1 {
+  font-family: var(--fq7-font-display);
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  line-height: 1.12;
+  font-weight: 700;
+  color: var(--fq7-gold-soft);
+  text-wrap: balance;
+}
+
+.fq7-lead {
+  font-size: 1.05rem;
+  max-width: 34rem;
+  color: rgba(245, 240, 230, 0.92);
+}
+
+.fq7-cta {
+  display: inline-block;
+  background: var(--fq7-gold);
+  color: var(--fq7-felt-deep);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1.9rem;
+  border-radius: 999px;
+  letter-spacing: 0.01em;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.fq7-cta:hover {
+  background: var(--fq7-gold-soft);
+  transform: translateY(-1px);
+}
+
+.fq7-heroimg {
+  width: 100%;
+  max-width: 1080px;
+  margin: 2rem auto 0;
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Блоки контента ---------- */
+.fq7-block {
+  padding: 3rem 1rem;
+  background: var(--fq7-cream);
+}
+
+.fq7-block-alt {
+  background: var(--fq7-cream-2);
+}
+
+.fq7-blockinner {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fq7-h2 {
+  font-family: var(--fq7-font-display);
+  font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--fq7-felt);
+  text-wrap: balance;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.fq7-h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  bottom: 0.25em;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--fq7-gold);
+}
+
+.fq7-text {
+  font-size: 1rem;
+  color: var(--fq7-ink);
+  max-width: 46rem;
+}
+
+.fq7-art {
+  width: 100%;
+  max-width: 520px;
+  margin: 0.5rem auto 0;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(23, 19, 13, 0.12);
+}
+
+.fq7-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 46rem;
+}
+
+.fq7-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 1rem;
+  color: var(--fq7-ink);
+}
+
+.fq7-item::before {
+  content: '◆';
+  color: var(--fq7-gold);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  flex-shrink: 0;
+}
+
+/* ---------- Подвал ---------- */
+.fq7-footer {
+  background: var(--fq7-felt-deep);
+  color: var(--fq7-cream);
+  padding: 2.5rem 1rem 2rem;
+}
+
+.fq7-footinner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.fq7-footbrand {
+  font-family: var(--fq7-font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--fq7-gold);
+}
+
+.fq7-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.fq7-tag {
+  font-size: 0.85rem;
+  color: var(--fq7-gold-soft);
+  background: rgba(201, 162, 39, 0.12);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.fq7-tag:hover {
+  background: rgba(201, 162, 39, 0.24);
+  color: #fff;
+}
+
+.fq7-copy {
+  font-size: 0.82rem;
+  color: rgba(245, 240, 230, 0.6);
+  border-top: 1px solid rgba(201, 162, 39, 0.2);
+  padding-top: 1.2rem;
+}
+
+/* ---------- Адаптив (mobile-first, расширение на десктоп) ---------- */
+@media (min-width: 640px) {
+  .fq7-nav {
+    padding: 0.85rem 1.5rem;
+  }
+
+  .fq7-hero {
+    padding: 3.5rem 1.5rem 0;
+  }
+
+  .fq7-block {
+    padding: 4rem 1.5rem;
+  }
+
+  .fq7-footer {
+    padding: 3rem 1.5rem 2.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .fq7-heroinner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .fq7-heroinner .fq7-h1,
+  .fq7-heroinner .fq7-lead,
+  .fq7-heroinner .fq7-cta {
+    max-width: 30rem;
+  }
+}
