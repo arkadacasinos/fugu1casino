@@ -68,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className="fq7-root">
       <head>
+        <meta name="yandex-verification" content="d525f5958878175a" />
         {/* Дополнительные пользовательские теги можно вставлять сюда */}
       </head>
       <body>{children}</body>
